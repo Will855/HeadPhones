@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --white: #fff;
+    --light-gray: #efefef;
+    --gray: rgba(216, 215, 214, 0.3);
+    --gray2: #9c9c9c;
+    --primary-color: #4c957f;
+    --black: #1d1a1a;
+    --font: 'Red Hat Display', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--light-gray);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    z-index: 10000;
+}
+
+.btn-menu, 
+.logo,
+.btn-shop {
+    font-size: 2em;
+    color: var(--black);
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 1px;
+    background: var(--primary-color);
+    padding: 15px 25px;
+    border-radius: 25px;
+    transition: 0.3s;
+    color: var(--white);
+} 
+
+.btn-primary:hover {
+    background: var(--gray2);
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background: var(--gray);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 1000;
+    padding-left: 70px;
+    transform: translateX(-100%);
+}
+
+.active {
+    transform: translateX(0%);
+} 
+
+.menu ul {
+    list-style: none;
+}
+.menu ul li {
+    margin-bottom: 30px;
+}
+.menu ul li a {
+    text-decoration: none;
+    font-size: 2.5em;
+    color: var(--black);
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: var(--primary-color);
+    letter-spacing: 3px;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#img-product {
+    position: relative;
+    padding-top: 80px;
+    width: 550px;
+    height: auto;
+    transform: rotate(-25deg);
+    right: 50px;
+    scale: 0.5;
+}
+
+.content {
+    position: relative;
+    right: 100px;
+    max-width: 400px;
+}
+
+.content h1 {
+    font-size: 7em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    line-height: 0.9;
+    color: var(--black);
+}
+
+.content h1 span {
+    color: var(--primary-color);
+}
+
+.content p {
+    color: var(--black);
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.content p span {
+    color: var(--primary-color);
+    font: bolder;
+}
+
+.content .btn-primary {
+    margin-top: 30px;
+}
+
+.content .color-list {
+    position: relative;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.content h2 {
+    color: var(--black);
+    font-size: 1.2em;
+}
+
+.color-list div {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.color-list div.green {
+    background: #4c957f;
+}
+
+.color-list div.blue {
+    background: #54aec7;
+}
+
+.color-list div.purple {
+    background: #5f3f64;
+}
+
+.rrss {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 80px;
+}
+
+.rrss ul {
+    list-style: none;
+}
+
+.rrss ul li {
+    margin-bottom: 10px;
+}
+
+.rrss ul li a {
+    font-size: 1.5em;
+    color: var(--black);
+    transition: 0.3s;
+}
+
+.rrss ul li a:hover {
+    color: var(--gray2);
+}
+
+/* ---------------------------
+   Media Queries Responsivos
+   --------------------------- */
+@media (max-width: 1024px) {
+    header {
+        padding: 30px 40px;
+    }
+
+    .content h1 {
+        font-size: 5em;
+    }
+
+    #img-product {
+        display: none;
+    }
+    .color-list{
+        h2 {
+            display: none;
+        }
+        div {
+            display: none;
+        }
+    }
+    .rrss {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 8px 30px;
+        position: fixed;
+        background: rgba(216, 215, 214, 0.5);
+    }
+
+    .btn-menu, 
+    .logo,
+    .btn-shop {
+        font-size: 1.8em;
+    }
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        padding-left: 30px;
+    }
+
+    .menu ul li a {
+        font-size: 2em;
+    }
+
+    section {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 80px;
+    }
+
+    img {
+        width: 80%;
+        max-width: 400px;
+        transform: rotate(0deg);
+        right: 0;
+        padding-top: 40px;
+    }
+
+    .content {
+        right: 0;
+        max-width: 90%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .content h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+
+    .rrss {
+        padding: 40px 30px;
+        top: auto;
+        bottom: 0;
+        transform: translateY(0);
+    }
+
+    .color-list {
+        justify-content: center;
+        top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .btn-group {
+        gap: 10px;
+    }
+
+    .btn-primary {
+        padding: 12px 18px;
+        font-size: 0.9em;
+    }
+
+    .content h1 {
+        font-size: 3em;
+        line-height: 1;
+    }
+
+    .content p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .menu ul li a {
+        font-size: 1.5em;
+    }
+
+    .rrss {
+        padding: 20px;
+        position: static;
+        text-align: center;
+    }
+
+    .rrss ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .color-list div {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .content h1 {
+        font-size: 2.5em;
+    }
+
+    .btn-primary {
+        padding: 10px 15px;
+    }
+
+    .menu ul li a {
+        font-size: 1.2em;
+    }
+}
