@@ -2,7 +2,14 @@ const menu = document.querySelector('.sidebar');
 const btnMenu = document.querySelector('.header__menu-btn');
 const colorList = document.querySelector('.color-picker');
 const imgProduct = document.getElementById('img-product'); // Mantener ID para funcionalidad
-const rrss = document.querySelectorAll('.social-links__list li');
+
+/*console.log('Elementos encontrados:', {
+    menu: document.querySelector('.sidebar'),
+    btnMenu: document.querySelector('.header__menu-btn'),
+    colorList: document.querySelector('.color-picker'),
+    imgProduct: document.getElementById('img-product'),
+    rrss: document.querySelectorAll('.social-links__item')
+});*/
 
 btnMenu.addEventListener('click', () => {
     if (menu.classList.contains('sidebar--active')) {
