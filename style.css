@@ -1,6 +1,6 @@
 /* ======================
-   Variables y Fuentes
-   ====================== */
+Variables y Fuentes
+====================== */
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
@@ -14,8 +14,8 @@
 }
 
 /* ======================
-      Reset Base
-      ====================== */
+        Reset Base
+    ====================== */
 * {
     margin: 0;
     padding: 0;
@@ -30,9 +30,9 @@ body {
 }
 
 /* ======================
-      Header
-      ====================== */
-header {
+        Header 
+    ====================== */
+.header {
     position: absolute;
     top: 0;
     left: 0;
@@ -44,26 +44,26 @@ header {
     z-index: 10000;
 }
 
-.btn-menu,
-.logo,
-.btn-shop {
+.header__menu-btn {
     font-size: 2em;
     color: var(--black);
 }
 
-.logo {
+.header__logo {
     text-decoration: none;
     font-weight: bolder;
+    font-size: 2em;
+    color: var(--black);
 }
 
-.btn-group {
+.header__btn-group {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
 
-.btn-primary {
+.header__login-btn {
     display: inline-block;
     text-decoration: none;
     font-size: 1em;
@@ -75,14 +75,14 @@ header {
     color: var(--white);
 }
 
-.btn-primary:hover {
+.header__login-btn:hover {
     background: var(--gray2);
 }
 
 /* ======================
-      Menú Lateral
-      ====================== */
-.menu {
+        Sidebar 
+    ====================== */
+.sidebar {
     position: absolute;
     top: 0;
     left: 0;
@@ -98,19 +98,19 @@ header {
     transform: translateX(-100%);
 }
 
-.active {
+.sidebar--active {
     transform: translateX(0%);
 }
 
-.menu ul {
+.sidebar__list {
     list-style: none;
 }
 
-.menu ul li {
+.sidebar__item {
     margin-bottom: 30px;
 }
 
-.menu ul li a {
+.sidebar__link {
     text-decoration: none;
     font-size: 2.5em;
     color: var(--black);
@@ -118,15 +118,15 @@ header {
     transition: 0.3s;
 }
 
-.menu ul li a:hover {
+.sidebar__link:hover {
     color: var(--primary-color);
     letter-spacing: 3px;
 }
 
 /* ======================
-      Sección Principal
-      ====================== */
-section {
+        Main Content 
+    ====================== */
+.main-content {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -134,7 +134,7 @@ section {
     align-items: center;
 }
 
-#img-product {
+.main-content__product-img {
     position: relative;
     padding-top: 80px;
     width: 550px;
@@ -144,13 +144,13 @@ section {
     scale: 0.5;
 }
 
-.content {
+.product-info {
     position: relative;
     right: 100px;
     max-width: 400px;
 }
 
-.content h1 {
+.product-info__title {
     font-size: 7em;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -159,30 +159,75 @@ section {
     color: var(--black);
 }
 
-.content h1 span {
+.product-info__title span {
     color: var(--primary-color);
 }
 
-.content p {
+.product-info__description {
     color: var(--black);
     font-size: 1.2em;
     margin-top: 20px;
 }
 
-.content p span {
+.product-info__description span {
     color: var(--primary-color);
     font-weight: bolder;
-    /* Corregido de font: bolder */
 }
 
-.content .btn-primary {
+.product-info__buy-btn {
+    display: inline-block;
     margin-top: 30px;
+    padding: 18px 45px;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 35px;
+    box-shadow: 0 8px 20px rgba(76, 149, 127, 0.25);
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
+
+.product-info__buy-btn:hover {
+    background: #3d7966;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(76, 149, 127, 0.35);
+}
+
+.product-info__buy-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(76, 149, 127, 0.3);
+}
+
+.product-info__buy-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.product-info__buy-btn:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+
 
 /* ======================
-      Selector de Colores
-      ====================== */
-.content .color-list {
+    Color Picker
+====================== */
+.color-picker {
     position: relative;
     top: 50px;
     display: flex;
@@ -190,240 +235,209 @@ section {
     gap: 20px;
 }
 
-.content h2 {
+.color-picker__title {
     color: var(--black);
     font-size: 1.2em;
 }
 
-.color-list div {
+.color-picker__btn {
     cursor: pointer;
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
 
-.color-list div.green {
+.color-picker__btn--green {
     background: #4c957f;
 }
 
-.color-list div.blue {
+.color-picker__btn--blue {
     background: #54aec7;
 }
 
-.color-list div.purple {
+.color-picker__btn--purple {
     background: #5f3f64;
 }
 
 /* ======================
-      Redes Sociales
-      ====================== */
-.rrss {
+        Social Links 
+    ====================== */
+.social-links {
     position: absolute;
     top: 50%;
     left: 0;
     padding: 80px;
 }
 
-.rrss ul {
+.social-links__list {
     list-style: none;
 }
 
-.rrss ul li {
+.social-links__item {
     margin-bottom: 10px;
 }
 
-.rrss ul li a {
+.social-links__link {
     font-size: 1.5em;
     color: var(--black);
     transition: 0.3s;
 }
 
-.rrss ul li a:hover {
+.social-links__link:hover {
     color: var(--gray2);
 }
 
 /* ======================
-      Media Queries
-      ====================== */
+        Media Queries 
+    ====================== */
 @media (max-width: 1024px) {
-    header {
-        padding: 30px 40px;
+    .header {
+        padding: 25px 40px;
     }
 
-    .content h1 {
-        font-size: 5em;
+    .product-info__title {
+        font-size: 4.5em;
+        line-height: 0.95;
     }
 
-    #img-product {
-        display: none;
+    .main-content__product-img {
+        width: 480px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 20px 30px;
     }
 
-    .color-list {
-
-        h2,
-        div {
-            display: none;
-        }
+    .product-info {
+        right: 50px;
+        max-width: 350px;
     }
 
-    .rrss {
-        display: none;
+    .product-info__title {
+        font-size: 4em;
     }
 }
 
 @media (max-width: 768px) {
-
-    /* Header Mobile */
-    header {
-        padding: 8px 30px;
-        position: fixed;
-        background: rgba(216, 215, 214, 0.5);
+    .header {
+        padding: 12px 25px;
+        background: rgba(255, 255, 255, 0.9);
     }
 
-    .btn-menu,
-    .logo,
-    .btn-shop {
-        font-size: 1.8em;
-    }
-
-    /* Menú Mobile */
-    .menu {
-        position: fixed;
-        width: 100%;
-        padding: 20px 30px;
-        backdrop-filter: blur(15px);
-    }
-
-    .menu ul li {
-        margin-bottom: 20px;
-    }
-
-    .menu ul li a {
-        font-size: 1.8rem;
-        padding: 10px 0;
-        display: block;
-    }
-
-    /* Contenido Principal */
-    section {
+    .main-content {
         flex-direction: column-reverse;
-        justify-content: center;
-        padding-top: 80px;
+        padding: 100px 20px 40px;
+        justify-content: flex-start;
     }
 
-    #img-product {
-        display: block !important;
-        width: 70%;
-        max-width: 300px;
-        transform: rotate(0deg);
-        margin: 0 auto;
-        padding-top: 40px;
-    }
-
-    .content {
+    .main-content__product-img {
+        width: 80%;
+        max-width: 320px;
+        padding-top: 30px;
         right: 0;
-        max-width: 90%;
-        text-align: center;
-        padding: 20px 0;
+        margin: 0 auto;
     }
 
-    .content h1 {
-        font-size: 3.5rem;
-        line-height: 1;
-        margin-bottom: 15px;
-    }
-
-    /* Selector de Colores Mobile */
-    .color-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
-        top: 30px;
-    }
-
-    .color-list h2 {
-        display: block !important;
+    .product-info {
+        right: 0;
         width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .color-list div {
-        display: block !important;
-        width: 35px;
-        height: 35px;
-    }
-
-    /* Redes Sociales Mobile */
-    .rrss {
-        position: static;
-        padding: 20px 0;
+        max-width: none;
+        padding: 0 20px;
         text-align: center;
     }
 
-    .rrss ul {
+    .product-info__title {
+        font-size: 3.5em;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .product-info__description {
+        font-size: 1.1em;
+        margin-top: 15px;
+    }
+
+    .color-picker {
         justify-content: center;
-        gap: 25px;
+        top: 25px;
+        margin-top: 15px;
     }
 
-    .rrss i {
-        font-size: 1.8rem;
+    .product-info__buy-btn {
+        width: 100%;
+        padding: 16px 30px;
+        font-size: 1.1em;
+        border-radius: 25px;
+        box-shadow: 0 6px 15px rgba(76, 149, 127, 0.2);
+    }
+    
+    .product-info__buy-btn:hover {
+        transform: none;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 15px 20px;
-        background: rgba(255, 255, 255, 0.95);
+    .header {
+        padding: 10px 15px;
     }
 
-    .btn-group {
-        gap: 15px;
+    .header__logo {
+        font-size: 1.8em;
     }
 
-    .btn-primary {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+    .header__btn-group {
+        gap: 12px;
     }
 
-    .content h1 {
-        font-size: 3em;
+    .header__login-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
     }
 
-    .content p {
+    .product-info__title {
+        font-size: 2.8em;
+        margin-bottom: 10px;
+    }
+
+    .product-info__description {
         font-size: 1em;
-        padding: 0 10px;
+        line-height: 1.4;
     }
 
-    .rrss ul {
+    .main-content__product-img {
+        width: 90%;
+        padding-top: 20px;
+    }
+
+    .color-picker {
         gap: 15px;
+        top: 20px;
+    }
+
+    .color-picker__btn {
+        width: 25px;
+        height: 25px;
     }
 }
 
 @media (max-width: 360px) {
-    .content h1 {
-        font-size: 2.5em;
+    .product-info__title {
+        font-size: 2.4em;
     }
 
-    .btn-primary {
-        padding: 10px 15px;
+    .header__login-btn {
+        padding: 6px 12px;
     }
 
-    .menu ul li a {
-        font-size: 1.2em;
-    }
-}
-
-/* Mejoras de Interacción Táctil */
-@media (hover: none) {
-
-    .btn-primary,
-    .btn-color {
-        min-width: 48px;
-        min-height: 48px;
+    .product-info__description {
+        font-size: 0.95em;
+        padding: 0 5px;
     }
 
-    .menu ul li a {
-        padding: 15px 0;
+    .color-picker {
+        gap: 12px;
     }
 }

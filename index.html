@@ -11,64 +11,45 @@
 </head>
 
 <body>
-    <header>
-        <a href="#" class="btn-menu">
+    <header class="header">
+        <a href="#" class="header__menu-btn">
             <i class="bx bx-menu-alt-left"></i>
         </a>
-        <a href="#" class="logo">HP</a>
-        <div class="btn-group">
-            <a href="" class="btn-stop"><i class="bx-bx-shopping-bag"></i></a>
-            <a href="" style="margin-bottom: 8px;" class="btn-primary">Iniciar Sesion</a>
+        <a href="#" class="header__logo">HP</a>
+        <div class="header__btn-group">
+            <a href="" class="header__shop-btn"><i class="bx-bx-shopping-bag"></i></a>
+            <a href="" style="margin-bottom: 8px;" class="header__login-btn">Iniciar Sesion</a>
         </div>
     </header>
 
-    <aside class="menu">
-        <!-- <a href="#" class="btn-close">
-            <i class="bx bx-x"></i>a
-        </a> -->
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Tienda</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacto</a></li>
+    <aside class="sidebar">
+        <ul class="sidebar__list">
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Inicio</a></li>
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Tienda</a></li>
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Blog</a></li>
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Contacto</a></li>
         </ul>
     </aside>
 
-    <section id="main">
-        <img src="./assets/1.png" alt="green-headphones" id="img-product">
+    <section class="main-content">
+        <img src="./assets/1.png" alt="green-headphones" class="main-content__product-img">
 
-        <div class="content">
-            <h1>Head<br><span>phones</span></br></h1>
-            <p>Un mundo de sonido <span>envolvente</span>, donde cada nota cobra <span>vida</span></p>
-            <a href="" class="btn-primary computer">comprar</a>
-            <div class="color-list">
-                <h2>Colores:</h2>
-                <div data-img="./assets/1.png" data-color="#4c957f" class="btn-color green"></div>
-                <div data-img="./assets/2.png" data-color="#54aec7" class="btn-color blue"></div>
-                <div data-img="./assets/3.png" data-color="#5f3f64" class="btn-color purple"></div>
+        <div class="product-info">
+            <h1 class="product-info__title">Head<br><span>phones</span></br></h1>
+            <p class="product-info__description">Un mundo de sonido <span>envolvente</span>, donde cada nota cobra
+                <span>vida</span></p>
+            <a href="" class="product-info__buy-btn">comprar</a>
+            <div class="color-picker">
+                <h2 class="color-picker__title">Colores:</h2>
+                <div data-img="./assets/1.png" data-color="#4c957f" class="color-picker__btn color-picker__btn--green">
+                </div>
+                <div data-img="./assets/2.png" data-color="#54aec7" class="color-picker__btn color-picker__btn--blue">
+                </div>
+                <div data-img="./assets/3.png" data-color="#5f3f64" class="color-picker__btn color-picker__btn--purple">
+                </div>
             </div>
         </div>
-        <div class="rrss">
-            <ul>
-                <li>
-                    <a href="#main">
-                        <i class="bx bxl-facebook-circle"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#main">
-                        <i class="bx bxl-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#main">
-                        <i class="bx bxl-pinterest"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
     </section>
-
 
     <script src="app.js"></script>
 </body>
