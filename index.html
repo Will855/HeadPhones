@@ -2,86 +2,73 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <header class="header">
-        <a href="#" class="header__menu-btn">
+    <header>
+        <a href="#" class="btn-menu">
             <i class="bx bx-menu-alt-left"></i>
         </a>
-        <a href="#" class="header__logo">HP</a>
-        <div class="header__btn-group">
-            <a href="#" class="header__cart-btn"><i class="bx bx-shopping-bag"></i></a>
-            <a href="#" class="header__login-btn btn btn--primary">Iniciar Sesión</a>
+        <a href="#" class="logo">HP</a>
+        <div class="btn-group">
+            <a href="" class="btn-stop"><i class="bx-bx-shopping-bag"></i></a>
+            <a href="" style="margin-bottom: 8px;" class="btn-primary">Iniciar Sesion</a>
         </div>
     </header>
 
-    <aside class="sidebar">
-        <ul class="sidebar__list">
-            <li class="sidebar__item">
-                <a href="#" class="sidebar__link">Inicio</a>
-            </li>
-            <li class="sidebar__item">
-                <a href="#" class="sidebar__link">Tienda</a>
-            </li>
-            <li class="sidebar__item">
-                <a href="#" class="sidebar__link">Blog</a>
-            </li>
-            <li class="sidebar__item">
-                <a href="#" class="sidebar__link">Contacto</a>
-            </li>
+    <aside class="menu">
+        <!-- <a href="#" class="btn-close">
+            <i class="bx bx-x"></i>a
+        </a> -->
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
         </ul>
     </aside>
 
-    <section class="product">
-        <img src="./assets/1.png" alt="green-headphones" class="product__image" />
+    <section id="main">
+        <img src="./assets/1.png" alt="green-headphones" id="img-product">
 
-        <div class="product__info">
-            <h1 class="product__title">
-                Head<br /><span class="product__highlight">phones</span>
-            </h1>
-            <p class="product__description">
-                Un mundo de sonido <span class="product__emphasis">envolvente</span>,
-                donde cada nota cobra <span class="product__emphasis">vida</span>
-            </p>
-            <a href="#" class="product__cta btn btn--primary">comprar</a>
-            <div class="product__colors color-picker">
-                <h2 class="color-picker__title">Colores:</h2>
-                <div data-img="./assets/1.png" data-color="#4c957f"
-                    class="color-picker__item color-picker__item--green"></div>
-                <div data-img="./assets/2.png" data-color="#54aec7" class="color-picker__item color-picker__item--blue">
-                </div>
-                <div data-img="./assets/3.png" data-color="#5f3f64"
-                    class="color-picker__item color-picker__item--purple"></div>
+        <div class="content">
+            <h1>Head<br><span>phones</span></br></h1>
+            <p>Un mundo de sonido <span>envolvente</span>, donde cada nota cobra <span>vida</span></p>
+            <a href="" class="btn-primary computer">comprar</a>
+            <div class="color-list">
+                <h2>Colores:</h2>
+                <div data-img="./assets/1.png" data-color="#4c957f" class="btn-color green"></div>
+                <div data-img="./assets/2.png" data-color="#54aec7" class="btn-color blue"></div>
+                <div data-img="./assets/3.png" data-color="#5f3f64" class="btn-color purple"></div>
             </div>
         </div>
-
-        <div class="social">
-            <ul class="social__list">
-                <li class="social__item">
-                    <a href="#main" class="social__link">
+        <div class="rrss">
+            <ul>
+                <li>
+                    <a href="#main">
                         <i class="bx bxl-facebook-circle"></i>
                     </a>
                 </li>
-                <li class="social__item">
-                    <a href="#main" class="social__link">
+                <li>
+                    <a href="#main">
                         <i class="bx bxl-instagram"></i>
                     </a>
                 </li>
-                <li class="social__item">
-                    <a href="#main" class="social__link">
+                <li>
+                    <a href="#main">
                         <i class="bx bxl-pinterest"></i>
                     </a>
                 </li>
             </ul>
         </div>
     </section>
+
 
     <script src="app.js"></script>
 </body>
